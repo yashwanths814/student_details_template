@@ -1,0 +1,102 @@
+/* static/css/index.css */
+
+body {
+    background-image: url('../images/bg.jpg'); 
+    background-size: cover;
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+}
+
+nav {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    width: 50px; /* Set the width of your logo image */
+    margin-right: 10px;
+    height: auto;
+}
+
+nav .links a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+}
+
+nav .links a:hover {
+    background-color: white;
+    color: #333; /* Change the text color on hover */
+}
+
+main {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.218);
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #2e2d2d;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+p {
+    margin-top: 10px;
+}
+h1 {
+    text-align: center;
+}
+span{
+    font-size: x-large;
+}
+input{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+}
