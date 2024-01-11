@@ -3,7 +3,6 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-# MongoDB Configuration
 client = MongoClient('mongodb+srv://karthik:admin@data.kv0kadm.mongodb.net/')
 db = client['students_db']
 collection = db['students']
@@ -18,20 +17,16 @@ def index():
         github = request.form['github']
         linkedin = request.form['linkedin']
 
-        # Validate email format
         if '@' not in email or '.' not in email:
             return render_template('index.html', error='Invalid email format')
 
-        # Check if the same USN exists in the database
         existing_student = collection.find_one({'usn': usn})
         if existing_student:
-            # Update existing data
             collection.update_one(
                 {'usn': usn},
                 {'$set': {'name': name, 'birth_date': birth_date, 'email': email, 'github': github, 'linkedin': linkedin}}
             )
         else:
-            # Create new data
             collection.insert_one({
                 'usn': usn,
                 'name': name,
