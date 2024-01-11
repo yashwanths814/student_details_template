@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Database - Output</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="" alt="Logo">
+            <span>Vidyavardhaka College of Engineering</span>
+        </div>
+        <div class="links">
+            <a href="{{ url_for('index') }}">Input</a>
+            <a href="{{ url_for('output') }}">Output</a>
+        </div>
+    </nav>
+    <main>
+        <h1>Output Page</h1>
+        <form method="post" action="{{ url_for('output') }}">
+            <label for="usn">Enter USN:</label>
+            <input type="text" name="usn" required>
+            <button type="submit">Search</button>
+        </form>
+        {% if not_found %}
+            <p>Student data not available.</p>
+        {% elif student %}
+            <p>Student Details:</p>
+            <ul>
+                <li><strong>USN:</strong> {{ student.usn }}</li>
+                <li><strong>Name:</strong> {{ student.name }}</li>
+                <li><strong>Birth Date:</strong> {{ student.birth_date }}</li>
+                <li><strong>Email:</strong> {{ student.email }}</li>
+                <li><strong>GitHub Profile:</strong> {{ student.github }}</li>
+                <li><strong>LinkedIn Profile:</strong> {{ student.linkedin }}</li>
+            </ul>
+        {% endif %}
+    </main>
+</body>
+</html>
