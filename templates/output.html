@@ -9,7 +9,7 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="" alt="Logo">
+            <img src="{{ url_for('static', filename='images/clglogo.png') }}" alt="Logo">
             <span>Vidyavardhaka College of Engineering</span>
         </div>
         <div class="links">
@@ -21,7 +21,7 @@
         <h1>Output Page</h1>
         <form method="post" action="{{ url_for('output') }}">
             <label for="usn">Enter USN:</label>
-            <input type="text" name="usn" required>
+            <input type="text" name="usn" required placeholder="Enter your USN">
             <button type="submit">Search</button>
         </form>
         {% if not_found %}
@@ -39,4 +39,5 @@
         {% endif %}
     </main>
 </body>
+
 </html>
